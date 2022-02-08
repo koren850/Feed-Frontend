@@ -18,11 +18,13 @@ export const Feed = () => {
 
   return (
     <section className='feed'>
-      <form onSubmit={submitForm}>
-        <textarea name='comment' onChange={handleChange}></textarea>
-        <input name='email' onChange={handleChange} type='email' />
-        <button type='submit'>Submit</button>
-      </form>
+      <div className='feed-form'>
+        <form onSubmit={submitForm}>
+          <textarea name='comment' onChange={handleChange}></textarea>
+          <input name='email' onChange={handleChange} type='email' />
+          <button type='submit'>Submit</button>
+        </form>
+      </div>
 
       <FeedList />
     </section>

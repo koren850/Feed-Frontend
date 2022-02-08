@@ -11,6 +11,7 @@
 .card {
   background-color: whitesmoke;
   margin: 4px;
+  padding: 4px;
   display: flex;
   flex-direction: column;
   border-radius: 4px;
@@ -23,6 +24,8 @@
     }
     img {
       border-radius: 50%;
+      height: 50px;
+      width: 50px;
     }
   }
 

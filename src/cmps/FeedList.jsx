@@ -27,7 +27,6 @@ export const FeedList = () => {
           <li className='card' key={comment._id}>
             <div className='card-inputs flex'>
               <img
-                style={{ width: '50px' }}
                 src={`https://www.gravatar.com/avatar/${comment.imgHash}?s=300`}
               />
               <span>{comment.email}</span>
