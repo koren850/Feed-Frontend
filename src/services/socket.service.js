@@ -9,7 +9,7 @@ export const SOCKET_EMIT_LOGIN = 'set-user-socket';
 export const SOCKET_EMIT_LOGOUT = 'unset-user-socket';
 
 
-const baseUrl = (process.env.NODE_ENV === 'production')? '' : '//localhost:3030'
+const baseUrl = (process.env.NODE_ENV === 'production') ? '' : '//localhost:3030'
 export const socketService = createSocketService()
 // export const socketService = createDummySocketService()
 
@@ -28,7 +28,7 @@ function createSocketService() {
     on(eventName, cb) {
       socket.on(eventName, cb)
     },
-    off(eventName, cb=null) {
+    off(eventName, cb = null) {
       if (!socket) return;
       if (!cb) socket.removeAllListeners(eventName)
       else socket.off(eventName, cb)
@@ -69,7 +69,7 @@ function createDummySocketService() {
       })
     },
     debugMsg() {
-      this.emit('chat addMsg', {from: 'Someone', txt: 'Aha it worked!'})
+      this.emit('chat addMsg', { from: 'Someone', txt: 'Aha it worked!' })
     },
   }
   window.listenersMap = listenersMap;
