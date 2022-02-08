@@ -1,0 +1,17 @@
+// .feed-list {
+//   flex-direction: column;
+// }
+.feed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 80%;
+
+  background-color: rgb(231, 231, 228);
+  border-radius: 4px;
+
+  //   height: 500px;
+  max-height: 80vh;
+}
