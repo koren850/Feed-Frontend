@@ -20,8 +20,17 @@ export const Feed = () => {
     <section className='feed'>
       <div className='feed-form'>
         <form onSubmit={submitForm}>
-          <textarea name='comment' onChange={handleChange}></textarea>
-          <input name='email' onChange={handleChange} type='email' />
+          <textarea
+            name='comment'
+            placeholder='Add a comment'
+            onChange={handleChange}
+          ></textarea>
+          <input
+            name='email'
+            placeholder='Enter an email'
+            onChange={handleChange}
+            type='email'
+          />
           <button type='submit'>Submit</button>
         </form>
       </div>

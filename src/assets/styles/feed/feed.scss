@@ -47,4 +47,15 @@
   button:active {
     background-color: #175a72;
   }
+
+  textarea {
+    overflow: auto;
+    resize: none;
+    border: none;
+    // height: 60px;
+    // height: 54px;
+  }
+  textarea:focus-visible {
+    outline: 2px solid #2596be;
+  }
 }
