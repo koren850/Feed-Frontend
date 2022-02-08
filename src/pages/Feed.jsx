@@ -1,24 +1,30 @@
-import { useState } from 'react';
-import { FeedList } from '../cmps/FeedList';
+import { useState, useEffect } from "react";
+import { FeedList } from "../cmps/FeedList";
+import { commentService } from "../services/comment.service.js";
 
 export const Feed = () => {
-  const [comment, setComment] = useState({});
+	const [comment, setComment] = useState({});
 
-  const handleChange = (ev) => {
-    const field = ev.target.name;
-    const value = ev.target.value;
-    setComment({ ...comment, [field]: value });
-  };
-  const submitForm = () => {};
-  return (
-    <section>
-      <form>
-        <textarea name='comment' onChange={handleChange}></textarea>
-        <input name='email' onChange={handleChange} type='email' />
-        <button type='submit'>Submit</button>
-      </form>
+	const handleChange = (ev) => {
+		const field = ev.target.name;
+		const value = ev.target.value;
+		setComment({ ...comment, [field]: value });
+	};
 
-      <FeedList />
-    </section>
-  );
+	const submitForm = (ev) => {
+		ev.preventDefault();
+		commentService.add(comment);
+	};
+
+	return (
+		<section>
+			<form onSubmit={submitForm}>
+				<textarea name='comment' onChange={handleChange}></textarea>
+				<input name='email' onChange={handleChange} type='email' />
+				<button type='submit'>Submit</button>
+			</form>
+
+			<FeedList />
+		</section>
+	);
 };
