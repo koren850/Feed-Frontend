@@ -1,0 +1,32 @@
+.feed-list {
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.feed-list-ul {
+  list-style: none;
+  overflow-y: auto;
+}
+
+.card {
+  background-color: whitesmoke;
+  margin: 4px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  .card-inputs {
+    align-items: center;
+    padding: 4px;
+
+    * {
+      margin: 4px;
+    }
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .comment {
+    margin-left: 66px;
+  }
+}

@@ -34,17 +34,17 @@ export const FeedList = () => {
 	}
 
 	return (
-		<section>
+		<section className='feed-list flex'>
 			<input onChange={handleFiller} value={filterBy} type='text' placeholder='Filter' />
 			{filteredComments.length ? (
-				<ul>
+				<ul className='feed-list-ul'>
 					{filteredComments.map((comment) => (
-						<li key={comment._id}>
-							<div>
+						<li className='card' key={comment._id}>
+							<div className='card-inputs flex'>
 								<img style={{ width: "50px" }} src={`https://www.gravatar.com/avatar/${comment.imgHash}?s=300`} />
+								<span>{comment.email}</span>
 							</div>
-							<div>{comment.email}</div>
-							<div>{comment.comment}</div>
+							<div className='comment'>{comment.comment}</div>
 						</li>
 					))}
 				</ul>
@@ -53,4 +53,10 @@ export const FeedList = () => {
 			)}
 		</section>
 	);
+	async function commentAdded() {
+		const comments = await commentService.query();
+		setComments(comments);
+	}
+
+	if (!comments.length) return <div>no comments yet</div>;
 };
